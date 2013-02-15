@@ -1,4 +1,4 @@
 *.swp
 package/ChangeLog
-package/yaourt-git*
-src/po/yaourt/generate.sh
+package/yogurt-git*
+src/po/yogurt/generate.sh

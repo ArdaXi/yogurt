@@ -1,12 +1,12 @@
-#    yaourtrc  - Configuration for yaourt
+#    yogurtrc  - Configuration for yogurt
 # 
-#   See yaourtrc(5) for more information
+#   See yogurtrc(5) for more information
 #   
 #
 
 # General
 #AUTOSAVEBACKUPFILE=0
-#DEVELBUILDDIR="@localstatedir@/abs/local/yaourtbuild"
+#DEVELBUILDDIR="@localstatedir@/abs/local/yogurtbuild"
 #DEVEL=0
 #EDITOR="$EDITOR"
 #FORCEENGLISH=0

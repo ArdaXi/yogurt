@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # misc.sh : Some misc functions
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 Y_PKG_ORPHANS="$YAOURTTMPDIR/orphans.$$"
 Y_PKG_INSTALLED="$YAOURTTMPDIR/installed.$$"

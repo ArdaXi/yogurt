@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # util.sh: common functions 
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 # Since we use some associated arrays, this file should be included from
 # outside a function.
@@ -66,11 +66,11 @@ manage_error() { ERROR_PKGS+=("$1"); return 1; }
 load_lib() {
 	while [[ $1 ]]; do
 		((LOADEDLIBS[$1])) && return 0
-		if [[ ! -r "@libdir@/yaourt/$1.sh" ]]; then
+		if [[ ! -r "@libdir@/yogurt/$1.sh" ]]; then
 			error "$1.sh file is missing"
 			die 1
 		fi
-		. "@libdir@/yaourt/$1.sh" || warning "problem in $1.sh library"
+		. "@libdir@/yogurt/$1.sh" || warning "problem in $1.sh library"
 		LOADEDLIBS[$1]=1
 		shift
 	done
@@ -140,7 +140,7 @@ check_dir() {
 # Check/init useful paths
 init_paths() {
 	check_dir TMPDIR || die 1
-	YAOURTTMPDIR="$TMPDIR/yaourt-tmp-$(id -un)"
+	YAOURTTMPDIR="$TMPDIR/yogurt-tmp-$(id -un)"
 	mkdir -p "$YAOURTTMPDIR" || check_dir YAOURTTMPDIR || die 1
 	(( EXPORT )) && [[ $EXPORTDIR ]] && { check_dir EXPORTDIR || die 1; }
 	parse_pacman_conf
@@ -197,14 +197,14 @@ run_editor() {
 }
 
 # Main init
-. '@libdir@/yaourt/io.sh'
-. '@libdir@/yaourt/pacman.sh'
+. '@libdir@/yogurt/io.sh'
+. '@libdir@/yogurt/pacman.sh'
 DBPATH='@dbpath@'
 LOADEDLIBS+=([util]=1 [io]=1 [pacman]=1)
 shopt -s extglob
 # General
 AUTOSAVEBACKUPFILE=0
-DEVELBUILDDIR='@localstatedir@/abs/local/yaourtbuild'
+DEVELBUILDDIR='@localstatedir@/abs/local/yogurtbuild'
 DEVEL=0
 FORCEENGLISH=0
 FORCE=0
@@ -238,11 +238,11 @@ TERMINALTITLE=1
 # Command
 DIFFEDITCMD="vimdiff"
 
-[[ -r '@sysconfdir@/yaourtrc' ]] && source '@sysconfdir@/yaourtrc'
-[[ -r ~/.yaourtrc ]] && source ~/.yaourtrc
+[[ -r '@sysconfdir@/yogurtrc' ]] && source '@sysconfdir@/yogurtrc'
+[[ -r ~/.yogurtrc ]] && source ~/.yogurtrc
 TMPDIR=${TMPDIR:-/tmp}
 check_dir TMPDIR || die 1
-YAOURTTMPDIR="$TMPDIR/yaourt-tmp-$(id -un)"
+YAOURTTMPDIR="$TMPDIR/yogurt-tmp-$(id -un)"
 export PACMAN=${PACMAN:-pacman}
 # Add --aur-url option to package-query args
 program_arg $A_PKC --aur-url "$AURURL"

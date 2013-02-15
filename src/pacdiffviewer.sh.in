@@ -19,15 +19,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 export TEXTDOMAINDIR='@localedir@'
-export TEXTDOMAIN=yaourt
+export TEXTDOMAIN=yogurt
 
 NAME='pacdiffviewer'
 VERSION='@VERSION@'
 
-. '@libdir@/yaourt/util.sh'
+. '@libdir@/yogurt/util.sh'
 
 ROOTDIR=
-SAVEDIR='@localstatedir@/lib/yaourt/backupfiles'
+SAVEDIR='@localstatedir@/lib/yogurt/backupfiles'
 LOCATE=0
 SEARCH_REP=(/etc/ /boot/)
 QUIET=0

@@ -1,13 +1,13 @@
 '\" t
-.\"     Title: yaourt
+.\"     Title: yogurt
 .\"    Author: [see the "Authors" section]
 .\" Generator: DocBook XSL Stylesheets v1.77.1 <http://docbook.sf.net/>
 .\"      Date: 2012-09-19
-.\"    Manual: Yaourt Manual
-.\"    Source: Yaourt 1.1
+.\"    Manual: Yogurt Manual
+.\"    Source: Yogurt 1.1
 .\"  Language: English
 .\"
-.TH "YAOURT" "8" "2012\-09\-19" "Yaourt 1\&.1" "Yaourt Manual"
+.TH "YAOURT" "8" "2012\-09\-19" "Yogurt 1\&.1" "Yogurt Manual"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -28,15 +28,15 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
-yaourt \- more than a frontend to pacman
+yogurt \- more than a frontend to pacman
 .SH "SYNOPSIS"
 .sp
-\fIyaourt\fR <operation> [options] [packages]
+\fIyogurt\fR <operation> [options] [packages]
 .sp
-\fIyaourt\fR (search pattern|package file)
+\fIyogurt\fR (search pattern|package file)
 .SH "DESCRIPTION"
 .sp
-Yaourt is a pacman frontend with a lot of features\&.
+Yogurt is a pacman frontend with a lot of features\&.
 .sp
 AUR/ABS support, colorized output, interactive search/install, save/restore Alpm database, orphans detection, manage \&.pac* files, \&...
 .SH "OPERATIONS"
@@ -136,17 +136,17 @@ Use <dir> as temporary folder\&. default to
 .RE
 .SH "BACKUP OPTIONS"
 .PP
-\fIyaourt \-B\fR
+\fIyogurt \-B\fR
 .RS 4
 Backup alpm local database in current dir\&.
 .RE
 .PP
-\fIyaourt \-B <dir>\fR
+\fIyogurt \-B <dir>\fR
 .RS 4
 Backup alpm local database in <dir>/pacman\-date\&.tar\&.bz2
 .RE
 .PP
-\fIyaourt \-B <file>\fR
+\fIyogurt \-B <file>\fR
 .RS 4
 Restore alpm local database from <file>\&.
 .RE
@@ -178,7 +178,7 @@ Filter output to packages installed as dependencies\&.
 \fB\-t, \-\-unrequired\fR
 .RS 4
 Filter output to packages not required by any currently installed package\&. With
-\fI\-d\fR, yaourt list all real orphans and ask for deletion\&.
+\fI\-d\fR, yogurt list all real orphans and ask for deletion\&.
 .RE
 .SH "SYNC OPTIONS"
 .PP
@@ -235,10 +235,10 @@ Upgrade all packages that are out of date\&.
 .RE
 .SH "HANDLING CONFIG FILES"
 .sp
-With AUTOSAVEBACKUPFILE (\fByaourtrc\fR(5)), yaourt will search and save all files marked as backup\&. These files can be used later with \fIyaourt \-C\fR to automerge current configuration files with new ones\&.
+With AUTOSAVEBACKUPFILE (\fByogurtrc\fR(5)), yogurt will search and save all files marked as backup\&. These files can be used later with \fIyogurt \-C\fR to automerge current configuration files with new ones\&.
 .SH "CONFIGURATION"
 .sp
-See \fByaourtrc\fR(5) for more details on configuring yaourt using the \fIyaourtrc\fR file\&.
+See \fByogurtrc\fR(5) for more details on configuring yogurt using the \fIyogurtrc\fR file\&.
 .SH "ENVIRONMENT VARIABLES"
 .PP
 \fBPACMAN\fR
@@ -260,9 +260,9 @@ Set a user defined colors\&. (see
 .RE
 .SH "SEE ALSO"
 .sp
-\fByaourtrc\fR(5), \fBmakepkg\fR(8), \fBpacman\fR(8)
+\fByogurtrc\fR(5), \fBmakepkg\fR(8), \fBpacman\fR(8)
 .sp
-See the yaourt website at http://archlinux\&.fr/yaourt\-en/ for more info\&.
+See the yogurt website at http://archlinux\&.fr/yogurt\-en/ for more info\&.
 .SH "BUGS"
 .sp
 http://bugs\&.archlinux\&.fr

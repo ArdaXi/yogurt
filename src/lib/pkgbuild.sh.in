@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # pkgbuild.sh : deals with PKGBUILD, makepkg ...
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 load_lib alpm_query
 
@@ -19,7 +19,7 @@ source_makepkg_conf() {
 	# else left empty (do not set to $PWD)
 	PKGDEST=${_PKGDEST:-$PKGDEST}
 	SRCDEST=${_SRCDEST:-$SRCDEST}
-	# Use $EXPORTDIR if defined in {/etc/,~/.}yaourtrc
+	# Use $EXPORTDIR if defined in {/etc/,~/.}yogurtrc
 	export PKGDEST=${EXPORTDIR:-$PKGDEST}
 	export SRCDEST=${EXPORTDIR:-$SRCDEST}
 	SRCPKGDEST=${_SRCPKGDEST:-$SRCPKGDEST}
@@ -45,7 +45,7 @@ read_pkgbuild() {
 	unset ${vars[*]}
 	local ${vars[*]}
 	local pkgbuild_tmp=$(mktemp --tmpdir=".")
-	echo "yaourt_$$() {"                            > $pkgbuild_tmp
+	echo "yogurt_$$() {"                            > $pkgbuild_tmp
 	cat PKGBUILD                                    >> $pkgbuild_tmp
 	echo                                            >> $pkgbuild_tmp
 	if (( update )); then
@@ -57,7 +57,7 @@ read_pkgbuild() {
 	echo "declare -p ${vars[*]} 2>/dev/null >&3"    >> $pkgbuild_tmp
 	echo "return 0"                                 >> $pkgbuild_tmp
 	echo "}"                                        >> $pkgbuild_tmp
-	echo "( yaourt_$$ ) || exit 1"                  >> $pkgbuild_tmp
+	echo "( yogurt_$$ ) || exit 1"                  >> $pkgbuild_tmp
 	echo "exit 0"                                   >> $pkgbuild_tmp
 	PKGBUILD_VARS="$(makepkg "${MAKEPKG_ARG[@]}" -p "$pkgbuild_tmp" 3>&1 1>/dev/null | tr '\n' ';')"
 	rm "$pkgbuild_tmp"
@@ -244,7 +244,7 @@ build_package() {
 	
 	# Build 
 	if (( ! UID )); then
-		warning $(gettext 'Building package as root is dangerous.\n Please run yaourt as a non-privileged user.')
+		warning $(gettext 'Building package as root is dangerous.\n Please run yogurt as a non-privileged user.')
 		sleep 2
 	fi
 	PKGDEST="$YPKGDEST" makepkg "${MAKEPKG_ARG[@]}" -s -f -p ./PKGBUILD

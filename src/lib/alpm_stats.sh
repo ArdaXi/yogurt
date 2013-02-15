@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # alpm_stats.sh : collect and show some stats about local database.
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 load_lib pkgbuild
 
@@ -105,7 +105,7 @@ show_disk_usage() {
 	echo -e "${CGREEN}$(gettext 'Space used by src downloaded in cache:') $CYELLOW $srcdestsize$C0"
 }
 
-yaourt_stats() {
+yogurt_stats() {
 	declare -a repos_packages orphans repositories
 	local pkgs_nb=0 pkgs_nb_d=0 pkgs_nb_e=0 pkgs_nb_dt=0 pkgs_nb_u=0
 	build_pkgs_list

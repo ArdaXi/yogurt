@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # alpm_query.sh : Query alpm database
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 # Query installed version
 pkgversion() {

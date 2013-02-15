@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # alpm_backup.sh : Manage database backup/restore
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 # save alpm database (local directory only) in a tar.bz2 file
 # $1: directory
@@ -71,7 +71,7 @@ restore_alpm_db() {
 }
 
 # save ($1 is a dir) or restore ($1 is a file) alpm database
-yaourt_backup() {
+yogurt_backup() {
 	local dest="$1"
 	[[ $dest ]] || dest="$(pwd)"
 	if [[ -d "$dest" && -w "$dest" ]]; then

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # aur.sh : deals with AUR
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 AUR_PKG_URL="$AURURL/packages.php?setlang=en&ID="
 

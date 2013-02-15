@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # abs.sh 
-# This file is part of Yaourt (http://archlinux.fr/yaourt-en)
+# This file is part of Yogurt (http://archlinux.fr/yogurt-en)
 
 RSYNCCMD=$(type -p rsync 2> /dev/null)
 RSYNCOPT="-mrtv --no-motd --no-p --no-o --no-g"
